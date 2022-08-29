@@ -1,0 +1,176 @@
+
+<script>
+/*
+ javascript objects supports only one key ,
+if we add multiple object key ,it only remeber last one.
+
+
+javascript objecct doesnt itterrate
+
+map functions= set,get,delete
+
+
+**/
+
+
+
+/*
+	Map	Object
+map:Accidental Keys	A Map does not contain any keys by default. It only contains what is explicitly put into it.
+obj:An Object has a prototype, so it contains default keys that could collide with your own keys if you're not careful.
+
+Note: As of ES5, this can be bypassed by using Object.create(null), but this is seldom done.
+
+map:Key Types	A Map's keys can be any value (including functions, objects, or any primitive).	
+obj:The keys of an Object must be either a String or a Symbol.
+Key Order	
+
+map:The keys in Map are ordered. Thus, when iterating over it, a Map object returns keys in order of insertion.
+obj:The keys of an Object are not ordered.
+
+Note: Since ECMAScript 2015, objects do preserve creation order for string and Symbol keys. In JavaScript engines that comply with the ECMAScript 2015 spec,
+ iterating over an object with only string keys will yield the keys in order of insertion.
+
+map:Size	The number of items in a Map is easily retrieved from its size property.
+obj:	The number of items in an Object must be determined manually.
+
+map:Iteration	A Map is an iterable, so it can be directly iterated.	
+obj:Iterating over an Object requires obtaining its keys in some fashion and iterating over them.
+
+Performance	
+map:Performs better in scenarios involving frequent additions and removals of key-value pairs.
+obj:Not optimized for frequent additions and removals of key-value pairs.
+
+
+1) A WeakMap accepts only objects as keys whereas a Map,in addition to objects, accepts primitive datatype such as strings, numbers etc.
+
+2) WeakMap objects doesn't avert garbage collection if there are no references to the object which is acting like a key. Therefore there is no method to retrieve keys in WeakMap, whereas in Map there are methods such as Map.prototype.keys() to get the keys.
+
+3) There is no size property exists in WeakMap.
+
+
+**/
+
+
+
+
+
+
+
+/* differen between map and object 
+ we get size of map using size key word,
+but  object size is not decided by size  property;
+
+map keys not duplicate ,its remember last one when duplicates are there 
+
+**/
+
+
+var map  = {
+  id:'1',
+  name:'sameArray'
+
+}
+
+var filter  = {
+  id:'2',
+  name:'changeArray'
+
+}
+
+var reduce = {
+  id: '3',
+  name:'unit an array'
+}
+
+  let mapObj = new Map();
+  
+  mapObj.set('map',map);
+  mapObj.set('filter',filter)
+  mapObj.set('reduce',reduce)
+  
+  //console.log(mapObj)
+  
+  //console.log(mapObj.size)
+  
+  //console.log(mapObj.get('map'))
+  
+  // console.log( mapObj.keys())
+
+  // console.log( mapObj.values())
+
+
+   for( key of mapObj.keys())
+   {
+      //console.log( mapObj.key)
+    }
+	
+	 for( value of mapObj.values())
+   {
+     // console.log(value)
+    }
+	
+	 for( const [key , value] of mapObj.entries())
+   {
+      //console.log(key + '= '+ value.name);
+    }
+   
+   
+    mapObj.forEach((key , value) => 
+    {
+     // console.log(key + '= '+ value);
+	  /*
+			[object Object]= map
+			[object Object]= filter
+			[object Object]= reduce
+	  **/
+	  
+	  
+    })
+	
+	mapObj.forEach((value , key) => 
+    {
+     // console.log(key + '= '+ value.name);
+		/*
+		op = 	map= sameArray
+			filter= changeArray
+			reduce= unit an array
+		**/
+	  
+	  
+    })
+   
+   var  arrofArr = [['one','1'],['two','2'],['three','3']]
+   
+   var newMap = new Map(arrofArr)
+   
+   // console.log(newMap)
+
+      for( value of newMap)
+   {
+      console.log(value)
+    }
+	
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

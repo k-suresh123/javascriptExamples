@@ -1,0 +1,109 @@
+<script>
+
+var nrfun =  function(ar,it){
+   for(var i=0;i<ar.length;i++){
+      it(ar[i],i);
+   
+   }
+}
+
+nrfun([1,2],function(ai,index){
+console.log(ai,index)
+})
+
+/*  Higher order functions are function that operate on other function by either
+taking them as arguments or return them.
+javascript supports first-class function makes it possible to create higher order funtions.
+
+*/
+
+var  triple = function(x){
+return x*3
+}
+ 
+ var waffle = triple
+ waffle(3)
+ 
+ //example two;
+
+ 
+var animal = [
+ {name:'rtommy',species:'rabbit'},
+ {name:'djimmy',species:'dog'},
+ {name:'cattommy',species:'cat'},
+ {name:'chummy',species:'dog'}
+ ]
+
+var isDog= function(animal){
+if(animal.species === 'dog')
+{
+ return animal.name
+}
+
+}
+ 
+ var dogs = animal.filter(isDog)
+    
+// var otherAnimals = animal.reject(isDog)
+   
+ console.log(`dogs:${JSON.stringify(dogs)}`)
+ //console.log(`otherAnimals:${otherAnimals}`)
+ 
+
+
+ //example threee;
+ //returning function  as INPUT
+ 
+ const profile = fn => {
+  console.log("start")
+  const result = fn();
+  console.log(result)
+   console.log("end")
+ 
+ }
+ 
+ const  compute = (x,y) => x+y
+ 
+ profile(compute)
+ 
+//example four;
+//returning function  as OUTPUT
+
+const profile1 = fn1 => {
+ 
+     return(...args)=>{
+     console.log("start")
+     const result = fn1(...args);
+     console.log(result)
+     console.log("end")
+	 }
+ 
+ }
+ 
+ const  compute1 = (x,y) => x+y
+ 
+ profile1(compute1)(1,2)
+
+//example four;
+//CREATING ABSTRACTION WITH FUNCTIONS
+
+const isLargerThan = value =>{
+  return(number)=>{
+    return number > value
+  }
+
+}
+
+const isLargerThan10 = isLargerThan(10)
+const isLargerThan100 = isLargerThan(100)
+
+const result1 = isLargerThan10(14)
+const result2 = isLargerThan100(98)
+
+console.log(result1)
+console.log(result2)
+
+
+
+ 
+</script>

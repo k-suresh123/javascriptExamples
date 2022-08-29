@@ -1,0 +1,35 @@
+<script>
+
+  console.log("person1:show ticket")
+   console.log("person2:show ticket")
+
+
+const getTicket = new Promise((resolve,reject)=>{
+
+ setTimeout(()=>{
+ resolve('ticket')
+ },3000)
+
+});
+
+const getPopcorn= getTicket.then((t)=>{
+  console.log("wife:ihave the tics")
+  console.log("huband:we should go in")
+  console.log("wife:iam hundgray")
+  return new Promise((resolve,reject)=> resolve(`${t}popcorn`));
+});
+
+const getButter= getPopcorn.then((t)=>{
+  
+  console.log("huband:i got some popcorn")
+   console.log("huband:we should go in")
+  console.log("wife:i need butter on my popcorn")
+  return new Promise((resolve,reject)=> resolve(`${t}butter`));
+});
+
+getButter.then((t)=> console.log(t));
+
+console.log("person4:show ticket")
+   console.log("person5:show ticket")
+ 
+</script>

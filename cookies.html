@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<select id="them" onchange="setColorCookie()">
+<option value="selectcolor">Select color</option>
+<option value="red">red</option>
+<option value="green">green</option>
+<option value="blue">blue</option>
+</select>
+
+<script type="text/javascript">
+
+window.onload = function(){
+alert(document.cookie.length)
+  if(document.cookie.length != 0){
+   var nameValueArray = document.cookie.split("=");
+   document.bgColor = nameValueArray[1]
+   document.getElementById("them").value = nameValueArray[1]
+  }
+   
+}
+
+
+function setColorCookie()
+{
+
+var selectedColor =  document.getElementById("them").value
+ alert(selectedColor)
+ if(selectedColor != 'select color')
+ {
+   document.bgColor =  selectedColor
+   document.cookie = "color="+ selectedColor+";expires=Fri ,23 mar 2020 01:00:00 UTC;"; 
+  
+ }
+
+
+}
+</script>
+
+</html>

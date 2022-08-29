@@ -1,0 +1,147 @@
+
+
+<script>
+//factory pattern
+var peopleFactory =function(name,age,state){
+
+  var temp = {};
+  temp.age =age;
+  temp.name = name;
+  temp.state= state;
+  
+  temp.printPerson= function(){
+  console.log(this.name+","+ this.age +","+this.state)
+  };
+  return temp;
+}
+var person1 = peopleFactory('john',23,'CA')
+var person2 = peopleFactory('RAMA',23,'MCA')
+
+person1.printPerson();
+person2.printPerson();
+
+//constroctor pattern
+
+var peopleConstructor = function(name,age,state){
+ this.name= name;
+ this.age = age;
+ this.state =state;
+ 
+ this.printPerson1 =function(){
+ console.log(this.name +","+this.age+","+this.state)
+ }
+
+}
+
+var person1 = new peopleConstructor("constru","pattern","javascript");
+var person2 = new peopleConstructor("constru1","pattern1","javascript1");
+
+person1.printPerson1();
+person2.printPerson1();
+
+
+//proto type pattern
+
+var peopleProto = function(){
+};
+peopleProto.prototype.age = 0;
+peopleProto.prototype.name= "no name";
+peopleProto.prototype.city = "no city";
+
+peopleProto.prototype.printFunction = function(){
+ console.log(this.name+","+this.age +","+this.city)
+}
+
+var person1 = new peopleProto();
+//person1.name = 'john1';
+person1.age = 23;
+person1.city = "hyd";
+
+console.log( 'name' in person1 )
+console.log(person1.hasOwnProperty('name'));
+
+
+//dynamic prototype pattern
+
+var peopleDynamicProt =function(name,age,state){
+  this.age = age;
+  this.name = name;
+  this.state = state;
+  
+  if(typeof this.printPeron !== 'function')
+  {
+    peopleDynamicProt.prototype.printPeron =function(){
+	  console.log(this.name+","+this.age +","+this.state)
+	}
+  }
+
+}
+person1 = new peopleDynamicProt('dynamic',23,'ca')
+person1.printPeron();
+
+
+
+
+
+
+
+
+ 
+ 
+</script>
+
+
+<script>
+// for object need  dot '.' symbol to add extra members
+// for constroctor function need prototype to add extra members
+ obj = {
+  age: function(){
+    dt = new Date().getFullYear()
+	return `${dt - this.year}`
+  }
+ }
+ 
+  obj.show = function(){
+  return `${this.name } year ${this.year } city ${this.city }`
+  }
+  
+  obj1 ={}
+  obj1.name = 'ram'
+  obj1.year = 1985
+  obj1.city = "hyd"
+  
+  console.log(obj.show.bind(obj1)())
+//console.log(obj.age())
+ 
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

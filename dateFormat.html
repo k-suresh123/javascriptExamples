@@ -1,0 +1,18 @@
+<script>
+
+
+
+dt = new Date('1-5-2019');
+
+d = dt.getDate();
+m = dt.getMonth()+1;
+y= dt.getFullYear();
+
+
+str = (d<=9 ? '0'+d : d)+'-'+(m <= 9 ? '0'+m : m)+'-'+(y)
+console.log(str)
+
+dat = dt.toTimeString()
+console.log(dat)
+
+</script>

@@ -1,0 +1,17 @@
+<script>
+
+document.querySelector("#copy-button").onclick = function() {
+  // Select the content
+  document.querySelector("#copy-input").select();
+  // Copy to the clipboard
+  document.execCommand('copy');
+};
+const element = document.getElementsByTagName("body")[0];
+console.log(element);
+</script>
+<body>
+<button id="copy-button">copy here</button>
+<input type="text" id="copy-input">
+
+
+</body>

@@ -1,0 +1,49 @@
+<script>
+
+// event loop is hold the queue and prioritizing the task 
+
+
+// setTimeout  and promises are diffrent task then the main task
+
+// even though setTimeout is 0 seconds ,print after promises
+
+//phases of eventloop
+
+
+1) Timer
+2) pending callbacks
+3) ideal/prepare
+4) poll(connection)
+5)check
+6)close callback
+
+
+
+
+
+
+
+
+1 closed callba
+
+
+/* 
+priority of task 
+
+  1) main   (main thred first )
+  2) micro queue  (like promises )
+  3) task queue    (then setTimeout)
+
+**/
+
+console.log("start")
+
+setTimeout(()=>{ console.log("setTimeout 1") },0)
+
+setTimeout(()=>{ console.log("setTimeout 2")},0)
+
+Promise.resolve().then( r => console.log('promise1')).then(r => console.log('promise1'))
+
+console.log("end")
+
+</script>

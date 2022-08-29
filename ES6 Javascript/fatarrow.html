@@ -1,0 +1,138 @@
+<script>
+let simplefatarrow = a=> a  //no need return  
+
+console.log("fatarrow:"+simplefatarrow(2))
+
+
+let square = a => a*a;
+console.log(square(2)) 
+
+a=5;
+let squares = () =>{ return a*a; }
+console.log(squares()) 
+
+let multArg = (a,b)=>{return a*b };
+
+console.log("multiargarrow:"+multArg(5,2))
+
+//class scope 
+//fat arrow doesnot have its own "this"
+
+
+//** importanant functions **
+
+// arrow function looks its upper object "this"
+var name = "global"
+var main = function(){
+this.name = "clsglobal"
+ this.fun = ()=>{
+	  var fun1 = ()=>{
+	  console.log(this.name)
+	  console.log(name)
+	  }
+	fun1()
+	} 
+}
+ ref = new main()
+ ref.fun();
+
+// normal function looks global object "this"
+
+var name = "global"
+var main = function(){
+this.name = "clsglobal"
+ this.fun = ()=>{
+	  var fun1 = function(){
+	  console.log(this.name)
+	  console.log(name)
+	  }
+	fun1()
+	} 
+}
+ ref = new main()
+ ref.fun();
+
+
+
+//exaples
+//exp 1
+var x =  function(){
+ that = this;
+ this.val = 1;
+  setTimeout(function(){
+    that.val++;
+	console.log(that.val)
+  
+  },1)
+
+};
+var xx = new x();
+
+//exp 2***********************
+
+var val =6
+var x =  function(){
+ 
+      //val = 10;
+   this.val = 2;
+  
+  (function(){
+   console.log(this.val) //if global val is not there o/p is undifined
+  })()
+ 
+}
+var xx = new x();
+
+
+
+
+
+var y =  function(){
+ this.val = 1;
+  setTimeout(()=>{
+    this.val++;
+	console.log(this.val)  //receive upper function object
+  
+  },1)
+
+};
+var y = new y();
+
+//passong orguments
+
+var z  = function(){
+
+console.log("predifined function is arguments: "+arguments[2])
+
+}
+
+z(1,2,3);
+
+// es6 introduced spread operator: we can pass multiple arguments
+
+
+var spreadoperator  = (...ar)=>{
+
+console.log("spread operator: "+ar[2])
+
+}
+
+spreadoperator(1,2,3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

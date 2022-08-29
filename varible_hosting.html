@@ -1,0 +1,178 @@
+ 
+ <!-- /*  local variable : avaialable with in the function -->
+   <!-- it is start when function start and  end when function close; -->
+   
+   
+   <!-- global variable declared outside function , start with its declaration -->
+   <!-- and deleted when the page is closed -->
+   
+   
+   
+   <!-- variable hosting: depend on the varible scope,  -->
+       <!-- its move on the top of the page, -->
+    	   <!-- or top  of the function  -->
+   
+   
+   <!-- diffrence between local and global varible -->
+   
+   <!-- FUNCTION hosting:  -->
+       <!-- its move on the top of the page before declaration -->
+	    <!-- but not on function expression -->
+    	  
+   
+   
+ 
+   
+   
+      
+	
+ 
+ 
+ 
+ document.write(x)  //reference error x is not difined
+     x =10
+  
+  document.write(y) //undifined
+    var y =10
+  
+  
+  
+  
+   function helloWorld(){
+    
+	var greeting = "Hello";
+	greeting = greeting + "javascript";
+	document.write(greeting)
+	}
+	helloWorld();
+ document.write(greeting)// reference error
+ 
+ 
+ 
+<script>
+  
+  var global = "hello"
+ 
+ function helloworld(){
+ 
+  global = global+ "javascript"
+ document.write(global)
+ document.write("<br>")
+ 
+ 
+ }
+  helloworld();
+  document.write(global)
+ 
+</script>
+
+<script>
+// not assign var key word so it s become global 
+ 
+ function helloworld(){
+ 
+  global ="javascript"
+ document.write(global)
+ document.write("<br>")
+ 
+ 
+ }
+  helloworld();
+  document.write(global)
+ 
+</script>
+
+
+
+<script>
+
+// access global and local variable with inthe function when both have the same name
+
+var global = "this is global varible"
+ 
+ function helloworld(){
+   var global ="this is local varible"
+   document.write(this.global)// this is global object
+  document.write("<br>")
+ document.write(global)
+
+ }
+  helloworld();
+  document.write(global)
+ 
+</script>
+
+
+
+
+
+<script>
+/*
+   if both have same name
+	     if change the global variable it only modified but not local
+		 if change the local variable it only modified but not global
+    
+   
+   
+   **/
+
+var global = "this one is"
+ 
+ function helloworld(){
+   var global ="this is "
+     global += "local varible"
+  
+ document.write(global)
+ document.write("<br>")
+ 
+ 
+ 
+ }
+  
+  helloworld();
+  global += "global varible"
+
+  document.write(global)
+ 
+</script>
+<script>
+
+   var global = "this one is";
+   helloworld();
+   document.write(global)
+   function helloworld(){
+     document.write(global) //  variable scopt is move to the top of the function 
+     var global ="this is "
+     document.write("<br>")
+    }
+</script>
+
+
+<script>
+// differen between let and var 
+     var global = 10;
+	 var  global = 120;
+	 document.write(global)
+	
+        let global = 10;
+	    let global = 120;
+	 document.write(global)
+
+
+</script>
+
+<script>
+const a ={
+  name : "suresh",
+  mob: "9030745144"
+
+}
+
+ a.name = "ram"
+
+document.write( a)
+document.write( [1,2] == [1,2])
+
+</script>
+
+

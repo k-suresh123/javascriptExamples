@@ -1,0 +1,48 @@
+
+<script>
+/* iterable
+
+iterable object have the symbol.iterable function,
+non iterable object have no the symbol.iterable
+console.dir()
+
+Symbol.iterator :
+  is recently added to the all the iterable objects
+  strings,sets ,weaksets,map,weakmap are objects,this are  iterable
+  
+  "for of" work on only iterable objects
+  
+  run the function to iterate:
+    let myArray = [1,2,3,4,]
+	let iterator = myArray[Symbol.iterator]()
+  
+
+**/
+
+ set = new Set([1,3,4,4])
+
+for(let v of set)
+{
+ console.log(v)
+}
+
+let obj1 = {
+  name:'bob',
+  age:20,
+  friends:function(){
+   return this.name;
+  }
+}
+
+for(let keys in obj1)
+{
+ console.log(keys)
+}
+console.log("Symbol.iterator:")
+let myArray = [1,2,3]
+	let iterator = myArray[Symbol.iterator]()
+	console.log(iterator.next())
+	console.log(iterator.next())
+    console.log(iterator.next())
+	console.log(iterator.next())
+</script>

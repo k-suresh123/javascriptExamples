@@ -1,0 +1,75 @@
+
+<script>
+/*  we can creat object for derived class even which doesnt have constructor also 
+ class Teacher extends User{}
+  const john = new Teacher("John","Anderdon",34)
+   console.log(john.getFullName())
+    john.editName("Johnny Anderson")
+      console.log(john.getFullName())
+	  
+Method Overriding:
+  method name should be same and arguments shoud be same in parent class and sub class
+  when call the method with objet reference ,
+  ref check for method in sub class ,
+  if its not available its cheking in super class.  
+	  
+ **/
+class User{
+
+		constructor(firstname,lastname,credit){
+			this.firstname = firstname;
+				this.lastname = lastname;
+					 this.credit = credit;
+			}
+	  
+		getFullName(){
+			let fullName = `${this.firstname} ${this.lastname} is my fullname`
+				return fullName;
+			}
+		editName(newName){
+			const myname =  newName.split(" ");
+				this.firstname = myname[0];
+					this.lastname = myname[1];
+			}
+	}
+// 
+class Teacher extends User{
+		constructor(firstname,lastname,credit,subject)
+		{
+			super(firstname,lastname,credit);
+			this.subject = subject;
+		}
+// method overriding
+		getFullName(){
+			let fullName = `${this.firstname} ${this.lastname} is my fullname from sub`
+			return fullName;
+		}
+	}
+const john = new Teacher("John","Anderdon",34)
+
+	console.log(john.getFullName())
+	john.editName("Johnny Anderson")
+	console.log(john.getFullName())
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

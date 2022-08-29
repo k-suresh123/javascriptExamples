@@ -1,0 +1,121 @@
+	  <script>
+/*
+if we call next method every thing return undefined
+**/
+
+   let log  = console.log;
+
+    function * genny(){
+      yield 'a';
+      yield 'b';
+      yield 'c';
+      return false; // value :false,done:true
+     // return undefined;// value:undefined: true; //nothing is yielded
+      yield 'b';
+      yield 'c';
+   }
+
+let generator = genny();
+
+ log(generator.next());
+  log(generator.next());
+   log(generator.next());
+    log(generator.next());
+     log(generator.next());
+	  log(generator.next());
+	    log(generator.next());
+		  log(generator.next());
+		  
+		  	  </script>
+		  <script>
+
+      let log  = console.log;
+	  let characters = ['Fin','Poe','Rey','Kye']
+	  
+	  function *gen1(){
+	    let i =0;
+		yield characters[i];
+		i++;
+		yield characters[i];
+		i++;
+		yield characters[i];
+		i++;
+		yield characters[i];
+		i++;
+		yield characters[i];
+		
+		
+	  }
+	  
+	  let iter = gen1();
+	  log(iter)
+	   log(iter.next())
+	      log(iter.next())
+		     log(iter.next())
+			    log(iter.next())
+				 log(iter.next())
+				   log(iter.next())// done is true because actullay reaching the point
+			
+
+
+</script>
+
+<script>
+
+     //custome iterator
+	 //object doesnt have iterator
+	 //if you have iterator in object, u have to built it
+	   let log  = console.log;
+	  let starwars= {
+	   title:'The Last jodi',
+	   director:'Rian Johson',
+	   year:2017,
+	   bodOffice:'138'
+	    
+	  }
+	  /*
+	  let sw = {
+	    [Symbol.iterator]:function(){
+		  return{}
+		}
+	  }
+	  let data = sw[Symbol.iterator]();
+	  log(data.next());
+	  **/
+	  
+	  
+	  let count = -1;
+	  let sw = {
+	    [Symbol.iterator]:function(){
+		  return{
+		     next:()=>{
+			 count++;
+			switch(count){
+			
+			   case 0:
+			   return {value: starwars.title,done:false};
+			  case 1:
+			   return {value: starwars.year,done:false};
+			   case 2:
+			   return {value: starwars.director,done:false};
+			   default:
+			   return {value: undefined,done:true};
+			
+			}
+			}
+		  
+		  
+		  }
+		}
+	  }
+	  
+	  let data = sw[Symbol.iterator]();
+	  log(data.next());
+	   log(data.next());
+	    log(data.next());
+		 log(data.next());
+	 
+	 
+	 
+
+</script>

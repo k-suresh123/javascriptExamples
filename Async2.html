@@ -1,0 +1,41 @@
+<script>
+
+
+multipromise = async function()
+{
+
+  first = new Promise(function(resolve,reject){
+    resolve("first")
+   
+   })
+   
+   second =new Promise(function(resolve,reject){
+     resolve("second")
+   })
+
+ const y=await Promise.all([first,second])
+ 
+ 
+
+   //x =await first
+   //y = await second
+   
+   return y;
+
+
+}
+
+multipromise().then(function(x){
+console.log(x)
+})
+
+
+
+
+
+
+
+
+
+
+</script>

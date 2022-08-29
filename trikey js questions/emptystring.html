@@ -1,0 +1,47 @@
+<script>
+console.log([]+[])// empry string(empty array)+ empty string (empty array) = empty string
+console.log({}+{}) // object+object
+console.log({}+[])  //object 
+
+//
+
+
+
+
+
+function a(){
+return 'hello';
+}
+
+ const senetence =  a('hi');
+console.log(senetence)
+
+//arguments tricky questions
+
+function y()
+{
+console.log(this.length)
+}
+
+var x = {
+length:5,
+method:function(y){
+arguments[0]()
+}
+};//x objects  
+
+x.method(y,1)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<div contenteditable="true">hello</div>

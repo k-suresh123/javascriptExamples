@@ -1,0 +1,33 @@
+<script>
+const log= console.log
+var ar = [2,2,3,4,5]
+
+const man = ar.map((v,i,ar)=>{
+
+ var  res = ar.reduce((t,v,j,ar2)=>{
+       if( i != j){
+	    return t*v;
+	   }
+    return t
+  },1)
+  return res
+
+}) 
+log(man)
+	
+</script>
+<script>
+
+ const ars = [1,2,3,4]
+	var  res =  ars.map((v,i,ar1)=>{
+      return ar1.reduce((t,v1,j,ar2)=>{
+	    if( i != j)
+		{
+		 return t+v1
+		}
+		return t
+	 },0)
+  
+  })
+  log(res)
+</script>

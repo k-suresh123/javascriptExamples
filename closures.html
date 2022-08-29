@@ -1,0 +1,117 @@
+
+
+
+<SCRIPT>
+/* 
+https://www.tutorialsteacher.com/javascript/closure-in-javascript
+When to use Closure?
+Closure is useful in hiding implementation detail in JavaScript. 
+In other words, it can be useful to create private variables or functions.
+
+**/
+
+var counter = (function(){
+ var privateCounter = 0;
+ function changeBy(val){
+   privateCounter += val;
+ }
+ 
+ return {
+   increment: function(){
+      changeBy(1)
+   },
+   decrement: function(){
+      changeBy(-1)
+   },
+   value: function(){
+      return privateCounter;
+   }
+ 
+ }
+
+})()
+
+
+alert(counter.value());//0
+counter.increment();
+counter.increment();
+alert(counter.value());//2
+counter.decrement();
+alert(counter.value());
+
+
+
+
+
+
+
+
+
+
+
+
+
+function adddata()
+{
+  var result = 0
+  
+  function add(){
+ return ++result 
+  }
+  return add
+
+}
+var rdata = adddata()()
+//document.write(rdata)
+
+
+// closures purspose 
+function fun(){
+
+  var a =0;
+  function infun(){
+
+   return ++a;
+  
+  }
+  return infun
+
+}
+var result = fun()();
+document.write(result)
+
+
+
+
+// innnert function 
+
+var inf = (function(){
+var inc=0;
+return function(){
+return inc++;
+}
+
+})()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</SCRIPT>
+<button  onclick="alert(inf())">inc</button>

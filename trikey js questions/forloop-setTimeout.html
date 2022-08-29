@@ -1,0 +1,19 @@
+<script>
+
+
+for( var i=0;i<5;i++)
+{
+
+setTimeout(()=>{
+
+console.log(i)
+},i*1000)
+
+
+}
+var firstObj = new BaseObject();
+var secondObj = new BaseObject('unique');
+
+console.log(firstObj);  // -> Results in 'default'
+console.log(secondObj); // -> Results in 'unique'
+</script>

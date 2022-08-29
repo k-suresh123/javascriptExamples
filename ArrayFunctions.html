@@ -1,0 +1,235 @@
+<script>
+//is arrya function in es5
+
+  var  isAry = [1,2,3,4];
+   
+   console.log(Array.isArray(isAry))//true
+
+
+
+//foreach
+	foreach = [1,2,3,4]
+	newForEach = [];
+	foreach.forEach((val,i,ar)=>{
+			 var mul =1
+		     for(let i=0;i<ar.length;i++)
+			   {
+				 if( ar[i] != val )
+				 {
+				   mul *= ar[i]
+				 }
+			   }
+			  newForEach.push(mul)		   
+		 })
+	 console.log('foreach:',newForEach)
+
+
+ //map
+// doesnt change orignal array
+			map1 = [1,2,3,4,5,6]
+			nary =  map1.map((v)=>{
+				switch(v){ 	
+				case 3: return v;
+				case 6: return v;
+				default : return v*3;
+				}
+			})
+			console.log('map:',nary)
+			
+// filter chage the return array
+// filter for change find the duplicates
+
+	  var dup = [1,2,2,1]
+
+	 nodup =  ar.filter((v,i,ary)=>{
+	  
+	 return (ary.indexOf(v)== i) 
+	 })
+	  console.log(nodup)
+
+		filt = [1,2,3,4,5,6]
+		newfilter =  filt.filter((v)=>{
+		switch(v){
+		case 3:  return ;
+		case 6:  return;
+		default: return v;
+			}
+		})
+		console.log('filter:',newfilter)
+//conflict with splice method
+  var ar = [0,0,0,9,16,20,24,0,0]
+
+   for(i=0;i<ar.length;i++ )
+   {
+     if(ar[i] == 0){
+	   a = ar.indexOf(ar[i])
+	   ar.splice(a,1)
+	   i=i-1
+	 }
+   
+   }
+  console.log(ar)
+		
+	
+ // slice method :when -1 return from back of the arrady 
+ // slice method :when 1 return from front of the array	
+		
+		splice1 = [1,2,3,4,5,6]
+  
+		backslice = splice1.slice(-4)
+		forntslice = splice1.slice(4)
+		part = splice1.slice(2,4)//4-2 = 2
+	
+		console.log("splice:",splice1)
+		console.log('front',forntslice)
+		console.log('backslice',backslice)
+		console.log('somepart',part)
+   
+		for(let i=0;i<splice1.length;i++)
+		{
+		if(splice1[i] == 2 || splice1[i] == 5){
+		splice1.splice(i,1,'added')     
+		}
+		}
+		console.log("splice:",splice1)
+		
+			
+
+
+
+
+// reduce return single value
+var ar = [1,2,3,4,3,5,6]
+
+//reduce
+       	console.log(ar)
+		var tot = ar.reduce((a,b)=>{
+		return a+b
+		})
+		console.log('reduce:',tot)
+		
+//every
+		var every = ar.every((v)=>{
+		   return  v > 0
+		})
+		console.log('every:',every)
+		
+//some	   
+	   var some = ar.some((v)=>{
+	   return  v > 4;
+	   })
+	   console.log('some:',some)
+
+//indexof	 
+		var indexof = ar.indexOf(5)
+		var novalue = ar.indexOf('no')
+	    console.log('indexof:',indexof)
+		console.log('novalue:',novalue)
+		
+		//The find() method returns 
+		//the value of the first array element that passes a test function.
+		
+//find		
+		 var find = ar.find((v)=>{
+            if( v > 2)	        
+			return v
+	   })
+	   console.log('find:',find)
+	   
+//findIndex	   
+	   var findindex = ar.findIndex((v)=>{
+            if( v > 2)	        
+			return v
+	   })
+	   
+	   console.log('findindex:',findindex)
+	   
+	//findIndex	   
+	   var findindex = ar.findIndex((v)=>{
+            if( v > 2)	        
+			return v
+	   })
+	   
+	 //sort method
+
+var people = 
+   [{ name:'abayi', age:50 },
+	{ name:'suman', age:35 },
+	{ name:'radha', age :60},
+	{ name:'krishna',age:44} ]
+	
+   var peopleage = people.sort((a,b)=>{
+     return a.age-b.age
+   })
+
+  console.log(peopleage)
+ 	 
+	   
+	   
+	   
+	   
+	   
+	   console.log('findindex:',findindex)   
+//// join method return what u send after joining
+		str = "itringi"
+
+		st = str.split('')
+
+		console.log(st.join('/'))
+		
+// search with find and toLowerCase()
+
+
+const obj =[{
+  title: "Buy Bread",
+  isDone: false 
+  },
+  {
+   title: "Go to Gym",
+   isDone: false
+  },
+  {
+  title: 'Record Youtube videos',
+  isDone : true
+  }]
+  
+  
+   const check = function(ary,title){
+     index = ary.findIndex(function(val){
+      return val.title.toLowerCase() === title.toLowerCase()
+   
+   })
+   
+   return index
+   }
+   console.log(check(obj,'Record Youtube videos'))
+
+
+
+
+		
+		
+		
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

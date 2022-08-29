@@ -1,0 +1,46 @@
+<html>
+<script>
+var secondLowest = function (a)
+{
+	first =a[0];
+	second = '';
+	for(i=1;i<a.length;i++)
+	{
+		if(first > a[i])
+		{
+		second = first
+		first = a[i]
+		}
+		else if( second > a[i] && first != a[i])
+		{
+		second  = a[i]
+		}
+	}
+	return `second lowest:${second}`
+}
+var secondHighest =function(b)
+{
+  first = b[0]
+  second = '';
+  for(i=1;i<b.length;i++)
+  {
+     if(first < b[i])
+     {
+	  second = first;
+	  first = b[i]
+	 }	
+     else if(second < b[i] && first != b[i])
+	 {
+	   second = b[i]
+	 }	 
+  }
+return `second Highest:${second}`;
+} 
+a = [20,10,5,15,23,6]
+
+console.log(secondLowest(a))
+console.log(secondHighest(a))
+
+
+</script>
+</html>

@@ -1,0 +1,72 @@
+
+<script>
+
+   myObject  ={};
+   const m = {};
+   const n = {};
+ 
+   //myObject['a'] = 'a'; 
+   //myObject['b'] = 'b';
+   // console.log(myObject['b'])
+ 
+     myObject[m] = 'a';
+     myObject[n] = 'b';
+  
+     //console.log(myObject)
+	 
+	 const myMap = new Map([ [ {m},'a'],[{n},'b']]);
+	 myMap.set('{l}','c');
+	 console.log(myMap)
+
+// part two
+
+   const a = {};
+   const b = { num :1 };
+   
+    const map= new Map();
+   
+     map.set(a,'a').set(b,'b').set(a,'c')
+   
+   //console.dir(map)
+   // map.delete(b)
+     const ary = [...map]
+     console.log(ary[1][0].num)
+   
+   //weakmap
+     {
+	  let x ={
+	  a : [1,2]
+	  };
+	  
+	  //weakmap controls 'let'  value should be in side block
+	  //but not map;
+	  var map1 = new WeakMap();
+	  //var map1 = new Map();
+	  map.set(x,'something')
+	
+	}
+	
+	// note let is available out side black also
+	console.log(map1) 
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/1.2.2/bluebird.js"></script>
+ 
+  <title>JS Bin</title>
+  <script>
+  /* ES5, using Bluebird */
+  /*  
+  https://www.geeksforgeeks.org/javascript-promises/
+Promises are used to handle asynchronous operations in JavaScript.
+ They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code.
+
+Prior to promises events and callback functions were used but they had limited functionalities and created unmanageable code.
+Multiple callback functions would create callback hell that leads to unmanageable code.
+Events were not good at handling asynchronous operations.
+
+Promises are the ideal choice for handling asynchronous operations in the simplest manner.
+ They can handle multiple asynchronous operations easily and provide better error handling than callbacks and events.
+ 
+ 
+ Benefits of Promises
+Improves Code Readability
+Better handling of asynchronous operations
+Better flow of control definition in asynchronous logic
+Better Error Handling
+A Promise has four states:
+fulfilled: Action related to the promise succeeded
+rejected: Action related to the promise failed
+pending: Promise is still pending i.e not fulfilled or rejected yet
+settled: Promise has fulfilled or rejected
+
+
+.......................Easy Programming.............................
+
+
+var promise = new Promise(function(resolve, reject) { 
+  const x = "geeksforgeeks"; 
+  const y = "geeksforgeeks"
+  if(x === y) { 
+    resolve(); 
+  } else { 
+    reject(); 
+  } 
+}); 
+  
+promise. 
+    then(function () { 
+        console.log('Success, You are a GEEK'); 
+    }). 
+    catch(function () { 
+        console.log('Some error has occured'); 
+    }); 
+
+
+
+
+ */
+  
+  
+  
+  
+  
+var isMomHappy = false;
+
+// Promise
+var willIGetNewPhone = new Promise(
+    function (resolve, reject) {
+        if (isMomHappy) {
+            var phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone);
+        } else {
+            var reason = new Error('mom is not happy');
+            reject(reason);
+        }
+
+    }
+);
+
+
+// call our promise
+var askMom = function () {
+    willIGetNewPhone
+        .then(function (fulfilled) {
+            // yay, you got a new phone
+            console.log(fulfilled);
+        }, function(err) { 
+       //error handler function is invoked 
+        console.log(error.message); 
+    })
+        .catch(function (error) {
+            // ops, mom don't buy it
+            console.log(error.message);
+        });
+}
+
+askMom();
+  
+  
+  </script>
+  
+  
+  
+</head>
+<body>
+
+</body>
+</html>

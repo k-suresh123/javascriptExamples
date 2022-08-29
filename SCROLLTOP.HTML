@@ -1,0 +1,49 @@
+<style>
+#p1{
+cursor:pointer;
+}
+#divhead{
+background-color:black;
+width:250px;
+height:40px;
+font-size:40px;
+font-weight:bold;
+text-align:right;
+}
+span{
+color:white;
+}
+#divcontainer{
+position:absoulte;
+}
+
+
+</style>
+
+<script>
+function fun1(){
+tp = document.body.scrollTop
+alert(tp)
+document.getElementById("divcontainer").style.top=tp
+}
+
+</script>
+
+
+
+
+<html>
+<body onScroll="fun1()">
+<div id="divcontainer">
+<div id ="divhead">
+
+<span id="p1" onClick="divcontainer.style.visibility=hidden">x</span>
+<img src="images/penguins.jpg"  id="imgs" style="position:absolute;width:1250px">
+
+
+
+</div>
+
+</div>
+
+</html>

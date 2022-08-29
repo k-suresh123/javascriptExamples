@@ -1,0 +1,90 @@
+
+<script>
+a=[10,45,6,3,8]
+n = a.length;
+
+for(i=0;i<n;i++)
+{
+
+    pass = i;
+	for(j= i+1;j<n;j++)
+	{
+	 if(a[j] < a[pass])	 
+	{
+	  pass = j
+	}
+		
+	}
+	if(i != pass)
+	{
+	
+	 a[i] = a[i]+a[pass]
+	 a[pass] = a[i]-a[pass]
+	 a[i] = a[i]-a[pass]
+	
+	}
+
+
+
+
+
+
+}
+alert(a)
+
+
+
+//
+
+
+<script>
+//console.log()
+var ar = [19,13,3,1,6,19]
+var re =ar.map((v,j,ar)=>{
+       pass = j
+	  for(let i=j;i<ar.length;i++)
+	  {
+	      if( ar[i]  < ar[pass] )
+		  {
+		    pass = i
+		  }
+	  }
+	  if(pass != j)
+	  {
+	    ar[pass] = ar[pass]+ar[j]
+		ar[j] = ar[pass]-ar[j]
+		ar[pass] = ar[pass]-ar[j]
+	  
+	  }
+	  
+	 if( j == 5)
+	 return ar
+	  
+  
+  
+  })
+
+console.log(re)
+
+ 
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+

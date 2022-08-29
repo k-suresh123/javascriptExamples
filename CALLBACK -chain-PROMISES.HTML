@@ -1,0 +1,95 @@
+<script>
+
+  first(2,function(firstvalue,err){
+   console.log(firstvalue)
+      if(!err){
+	     second(firstvalue,function(secondvalue,err){
+		  console.log(secondvalue)
+		      if(!err){
+			    third(secondvalue,function(thirdvalue,err){
+				   if(!err){
+				   
+				    console.log(thirdvalue)
+				   
+				   }
+				
+				
+				
+				})
+			  
+			  
+			  }
+		 
+		 
+		 })
+	  
+	  
+	  }
+  
+  })
+
+
+
+  function  first(value,callback){
+    callback(value+2,false) 
+  }
+  
+  function second(value,callback){
+  callback(value+2,false)
+  }
+  
+  function third(value,callback){
+  callback(value+2,false)
+  }
+  
+  
+  
+  // promises example
+  
+  promise = new Promise(function(resolve,reject){
+    resolve(2)
+    
+  })
+  
+  promise.then(distribute).then(sale).then(customer).then(function(result){console.log(""+result)})
+  
+  
+  function distribute(value){
+  return value+2
+  
+  }
+  
+  function sale(value){
+  return value+2
+  
+  }
+  
+  function customer(value){
+  return value+10
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+</script>

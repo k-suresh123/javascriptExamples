@@ -1,0 +1,99 @@
+<script>
+
+var obj1 ={firstName: "suresh",lastName: "k"}
+var obj2  ={firstName: "radha",lastName: "krisna"}
+
+
+function invite(x,y){
+
+console.log(x+' '+this.firstName+' '+this.lastName+" "+y)
+}
+
+
+invite.call(obj1,"hi","this is call funtion,send arguments as a string")
+invite.call(obj2,"hi","this is call funtion")
+
+
+
+invite.apply(obj1,["hi","this is apply function,send arguments as an array"])
+invite.apply(obj2,["hi","this is apply function"])
+
+
+var var1 = invite.bind(obj1)
+ var var2 = invite.bind(obj2)
+ 
+ var1("hi","this is bind fun,it is binding objecct")
+ var2("hi","this is bind fun,it is binding objecct")
+
+
+</script>
+
+<script>
+
+let dog = {
+   sound :'woof',
+   talk :function(){
+   console.log(this.sound)
+  } 
+}
+
+dog.talk() //woof
+
+
+let talkFunction1 = dog.talk 
+talkFunction1(); //undifined
+/* 
+
+//global object works if u take normal nested function;
+
+dog.talk =  talk(){
+console.log(this.sound) here this is a global object
+}
+
+**/
+
+let talkFunction = dog.talk.bind(dog)
+talkFunction();
+</script>
+
+<script>
+//bind example
+let talk = function(){
+console.log(this.sound)
+}
+
+let boromir = {
+
+ speak : talk,
+ sound : 'one does not simply walk into mordor'
+}
+
+let globalthis = boromir.speak.bind(boromir)
+globalthis()
+
+</script>
+
+<script>
+
+let talk = function(){
+console.log(this.sound)
+}
+
+let boromir = {
+
+ speak : talk,
+ sound : 'one does not simply walk into mordor'
+}
+
+let gollum = {
+
+ jabber : boromir.speak,
+ sound : 'this gollum'
+}
+
+ let assign = gollum.jabber.bind(boromir);
+assign()
+
+let assign1 = gollum.jabber.bind(gollum);
+assign1()
+</script>

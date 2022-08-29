@@ -1,0 +1,56 @@
+<script>
+a = [10,6,7,11,70]
+
+n = a.length
+
+for(i= Math.floor(n/2);i>= 0;i--)
+{
+
+funheapfy(a,i)
+    
+
+
+}
+alert(a)
+function funheapfy(a,i)
+{
+    max = i;
+	left = i*2 +1;
+	right = i*2 +2;
+	max= i;
+	
+	if(left < n && a[left]>a[max])
+	  max = left
+ 
+    if(right < n && a[right]>a[max])
+	max =right
+
+     if(i != max)
+	 {
+	  a[i] = a[i]+a[max]
+	  a[max] = a[i]-a[max]
+	  a[i] = a[i]-a[max]
+	 
+	 funheapfy(a,max)
+	 }
+	 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

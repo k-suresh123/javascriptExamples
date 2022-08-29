@@ -1,0 +1,47 @@
+
+<script>
+ar = [1,2,3]
+ 
+ awe =ar.map((v)=>{
+ 
+  res = ar.reduce((a,b)=>
+       {
+     if(b == v){
+	  return a*1
+	 }
+      return a*b
+     })
+  return res
+  })  
+  console.log(awe)
+
+
+
+
+  function mani(ar,n)
+    {
+	var newary = [];
+	if( n < 0)
+	{
+	return newary
+	}
+	else{
+		
+		var mul = 1;
+       	  for(let i =0;i< ar.length;i++)
+		   {
+              if( i !=  n)
+                 mul *= ar[i]			  
+		   }
+		   n--
+		   return newary.concat(mani(ar,n),mul)
+			
+	  }
+   }
+   var ar = [1,2,3,4]
+   
+   console.log(mani(ar,ar.length-1))
+   
+   
+     
+</script>

@@ -1,0 +1,49 @@
+<script>
+//back tick help you to make space in es6
+let str = `hello
+
+ world`;
+str1 = "hello"
+
+console.log(str)
+ 
+//  $ inter polation
+
+let x = `2`
+let y = `your number is ${x}`
+
+console.log(y)
+
+// automaticaly convrt into string
+
+let one =1;
+let two =2;
+let sum = `adding ${one} and ${two} gives me ${one + two}`// string template
+console.log(sum)
+
+let tagged = function(strArray,...spreadoperatorarray)
+{
+console.log(strArray)
+}
+console.log(spreadoperatorarray)
+// tagged template : by placing function name before string template
+//very use full in internalization
+tagged`adding ${one} and ${two} gives me ${one + two}`
+
+
+console.log(`thiss is string start with`.startsWith('thi'))
+
+console.log(`thiss is string include with`.includes('str'))
+
+console.log(`thiss is string ends with`.endsWith('with'))
+
+console.log(`thiss is string include with`.repeat(2))
+
+let raw = String.raw` Not a new line:\n`;
+
+console.log(raw)
+
+let raw1 = String` Not a new line:\n`;
+
+console.log(raw1)
+</script>

@@ -1,0 +1,17 @@
+
+<script>
+
+   a= [3,2,5,4]
+   
+   d =a.map((v)=>{
+   alert(v)
+   return v*2}).filter((x)=>{
+alert(x)
+   return x>4}).sort((a,b)=>{return a-b})
+   
+   console.log(d)
+   
+  b= a.reduce((a,b)=>{return a+b},10)
+  console.log(b)
+   
+</script>

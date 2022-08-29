@@ -1,0 +1,52 @@
+<script>
+var pairSum =(ar,target)=>{
+
+  var map = [];
+  var res = ''
+  return ar.reduce((t,v,i,ar)=>{
+        if(map[v] != null)
+	    {
+			  res = map[v]+'-'+i 
+			  t =res;
+			  return t
+		}else{
+			map[target - v] = i
+			if(i == ar.length-1)
+			{
+				t =res;
+				return t
+			}	     
+	    }
+      },'')
+  }
+  var ar = [2,3,1,6,7]
+  var target= 5;
+  console.log(pairSum(ar,9))
+	
+</script>
+
+<script>
+
+var  fun = (ar,target)=>{
+     var map = [];
+	 var  res ='';
+  return ar.reduce((t,v,i,ar1)=>{
+	   if(map[v] != null)
+	   {
+	     res = `${map[v]}=${i}`
+	   }else{
+	    map[target-v] = i
+	   }
+	   if(i == ar1.length-1 )
+	   {
+	    return res
+	   }
+	
+	})
+
+}//1
+
+console.log(fun([21,12,4,5,13],9))
+
+
+</script>

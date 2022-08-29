@@ -1,0 +1,33 @@
+
+<script>
+  a = [1,0,0]
+  b = [1,1,0]
+  c = [2,3,2]
+  
+  aray = [a,b,c]
+  m =aray.length
+  n = a.length;
+  diagonal = 0;
+  for(i=0;i<m;i++)
+  {
+    for(j=0;j<n;j++)
+	{
+	
+	   if(i < j)
+	    {
+		diagonal += 1
+		}
+	}
+  
+  }
+  console.log(diagonal)
+  if(diagonal == 3)
+  console.log("upper diagonal")
+  else
+  console.log("not diagonal")
+  
+  
+
+
+</script>
+

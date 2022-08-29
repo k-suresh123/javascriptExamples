@@ -1,0 +1,31 @@
+
+
+<script type="text/javascript">
+// We also learned that you can not add a new property to an existing object constructor:
+
+//All JavaScript objects inherit properties and methods from a prototype:
+
+function person(fname,lastname){
+  this.firstname = fname;
+  this.lastname = lastname
+}
+
+person.prototype.mobile = "9030745144"
+
+person.prototype.fun = function(){
+return this.firstname+","+this.mobile
+}
+
+obj = new person("ram","sriram");
+
+
+console.log(obj.fun())
+
+
+
+
+
+
+</script>
+
+</html>

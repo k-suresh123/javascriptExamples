@@ -1,0 +1,57 @@
+
+<script>
+//timecomplexity O(log(n))
+function isAnagram (str1, str2) {
+
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    
+    var sortStr1 = str1.toUpperCase().split('').sort().join('');
+    var sortStr2 = str2.toUpperCase().split('').sort().join('');
+
+    return (sortStr1 === sortStr2);
+}
+
+//timecomplexity O(n)
+
+function isAnagram2(s,t)
+{
+	hist = {}
+	for(let i=0;i<s.length;i++){
+	  let char = s[i]
+	  if(char in hist){
+		hist[char]++;
+	  }
+	  else{
+	  hist[char] = 1;
+	  }
+	}
+
+	  for(let i=0;i<t.length;i++){
+		let char = t[i]
+		if(char in hist){
+			hist[char]--
+		}else{
+		return false;
+		}
+	  }
+
+	   for(key in hist){
+		   if(hist[key])
+			 return false
+		}
+
+	return true;
+
+}  
+
+
+console.log(isAnagram2('abc','abc')); // true
+console.log(isAnagram2('foo','bar')); // false
+console.log(isAnagram2); // false
+
+
+
+
+</script>

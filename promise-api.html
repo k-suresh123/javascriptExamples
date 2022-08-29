@@ -1,0 +1,20 @@
+<script>
+unction fetchCatAvatatrs(){  
+
+return fetch(`https://jsonplaceholder.typicode.com/users`)
+.then(response => response.json())
+.then((user)=>{
+nary = []
+ const promises =  user.map((x)=>{
+   nary.push(x.name)
+  })
+  return nary
+})
+
+
+
+}
+
+ const result =  fetchCatAvatatrs()
+console.log(result)
+</script>

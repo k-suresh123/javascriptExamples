@@ -1,0 +1,32 @@
+<script>
+
+ function prfun(y)
+ {
+ return new Promise((resolve,reject)=>{
+  resolve(y.toUpperCase())
+ })
+ }
+
+
+
+async function mesg(x){
+ 
+     try{
+	   
+	  const msg = await prfun(x) 
+	   console.log(msg)
+	  
+	 }catch(err)
+	 {
+	   console.log(err.message)
+	 }
+ 
+
+}
+
+
+
+mesg("hello")
+mesg(1)
+
+</script>

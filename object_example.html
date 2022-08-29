@@ -1,0 +1,93 @@
+
+<script>
+
+let myTodos = {
+		day : 'Monday',
+		meetings: 0,
+		meetDone : 0, 
+}
+
+ let addMeeting = function(todo,meet =0){
+    todo.meetings = todo.meetings + meet
+ }
+ 
+ let meetDone = function(todo, meet=0){
+   todo.meetDone = todo.meetDone - meet
+ }
+ 
+ let resetDay = function(todo){
+    todo.meetings =0;
+	todou.meetDone =0;
+ 
+ }
+ 
+ let getSummaryOfDay = function(todo){
+ meetLeft = todo.meetings + todo.meetDone;  // logic applied
+	return `you have ${ meetLeft} meeting today!` 
+ 
+ }
+ 
+ addMeeting(myTodos,4)
+ addMeeting(myTodos,2)
+ meetDone(myTodos,5)
+  console.log(myTodos)
+  console.log(getSummaryOfDay(myTodos))
+
+
+
+
+</script>
+
+<script>
+
+meeting = {
+ day:'monday',
+ meetings: 0,
+ meetingDone:0,
+
+ addMeeting : function(num){
+    this.meetings = this.meetings + num;
+ },
+ 
+ meetDone : function(num){
+   this.meetingDone =   this.meetingDone + num;
+  
+ }
+ ,
+ 
+ getSummaryOfDay : function(){
+
+ meetLeft = this.meetings - this.meetingDone;  // logic applied
+	return `you have left ${ meetLeft} meeting today!` 
+ 
+ }
+
+ 
+}
+meeting.addMeeting(5)
+meeting.addMeeting(5)
+meeting.meetDone(6)
+
+
+console.log(meeting.getSummaryOfDay())
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

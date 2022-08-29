@@ -1,0 +1,29 @@
+
+
+<script>
+function fun(){
+console.log("call")
+
+}
+
+new Promise((resolve,reject)=>{
+
+ reject()
+}).then(()=>{
+console.log("then1")
+})
+.then(fun)
+.then(()=>{
+console.log("then2")
+})
+.catch(()=>{
+console.log("catch")
+})
+.then(()=>{
+console.log("then3")
+})
+
+
+
+
+</script>

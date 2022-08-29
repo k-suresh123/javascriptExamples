@@ -1,0 +1,54 @@
+
+<body >
+
+<div id="outter-buble">
+<h2>this is ouster bubble</h2>
+
+<div id="inner-most">
+<h2>Bubble invoke from inner to outer<h2>
+</div>
+
+</div>
+
+
+<div id="outer-caputer">
+<h2>capture invoke from outer to inner</h2>
+
+<div id="inner-capture">
+<h2>InnerMost inner<h2>
+</div>
+
+</div>
+<script>
+
+document.getElementById("outter-buble").addEventListener("click",function(){
+  alert("outer-bubble");
+}, false);
+
+
+
+document.getElementById("inner-most").addEventListener("click",function(){alert("inner bubble")},false)
+
+document.getElementById("outer-caputer").addEventListener("click",function(){alert("outer-caputer")},true)
+
+
+
+
+document.getElementById("inner-capture").addEventListener("click",function(){alert("inner-caputer")},true)
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

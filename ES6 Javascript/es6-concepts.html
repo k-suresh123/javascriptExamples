@@ -1,0 +1,112 @@
+<script>
+//https://www.javatpoint.com/es6-interview-questions
+//spread operator
+let num1 = [40,50,60]
+
+let num2 = [10,20,30,...num1,70,80,90];
+console.log(num2)
+
+//template string
+console.log(`template string`)
+let str1 = "hello";
+let str2 = "world"
+
+let str = `${str1}-${str2}`
+console.log(str)
+
+
+//default parameters
+console.log(`Default parameters`)
+var show = (a, b=200) => {  
+    console.log(a + " " + b);  
+}  
+show(100);  
+
+/* Destructuring
+ Destructuring means to break down a complex structure into simpler parts. 
+is introduced in ECMAScript 2015 or ES6 to extract data from objects and arrays into a separate variables
+**/
+console.log(`Destructuring`)
+var colors = ["violet","indigo","blue","red","green"]
+
+var[color1,color2,color3] = colors;
+
+console.log(color1)
+console.log(color2)
+console.log(color3)
+
+console.log(`Array destructuring and Rest operator`)
+
+var[color1,color2,color3,...color4] = colors;
+console.log(color4)
+
+console.log(`Array destructuring and Default values`)
+
+var x,y;
+
+[x=50,y=70,def=300] = [100,200]
+
+console.log(x)
+console.log(y)
+console.log(def)
+ 
+console.log(`Array destructuring and swap values`)
+//note semi colone compulsory here after n=20 
+var m =10,n =20;
+[m,n]=[n,m]
+
+console.log(m)
+console.log(n)
+
+
+//It is similar to array destructuring except that instead 
+//of values being pulled out of an array, the properties (or keys) and their
+ //corresponding values can be pulled out from an object.
+ function objectDestructuring(){
+  
+ console.log(`Object destructuring `)
+ const obj = {x:100,y:200}
+ const {x,y}=obj;
+ console.log(x)
+ console.log(y)
+//example
+
+ var record= [{name:'balu1' ,dir:'tri1',cost:1000 },
+ {name:'balu2' ,dir:'tri2',cost:2000 },
+ {name:'balu3' ,dir:'tri3',cost:3000 }
+  ]
+
+var {name,dir,cost} = record[1];
+
+console.log(dir)
+
+ }
+objectDestructuring()
+
+function odDefaultvalues(){
+  
+console.log(`Object destructuring and default values`)
+ 
+ const obj = {x:60,y:100}
+ //left assign object
+ const  {x= 40,add = 60,y=50} = {x:60};
+ console.log(x)
+ console.log(y)
+ 
+ }
+odDefaultvalues()
+
+
+function odNewvalues(){
+  
+console.log(`Object destructuring and Assigning new variable names`)
+ 
+ const num = {x:15,y:20}
+ const{ x:new1} =
+ console.log(x)
+ console.log(y)
+ odNewvalues()
+
+
+
+</script>

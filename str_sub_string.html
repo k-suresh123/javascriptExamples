@@ -1,0 +1,50 @@
+<script type="text/javascript">
+//var res = str.substring(str.length,str.length-1);
+
+count = 0;
+
+ let countSubString = (str, subStr, n1 = str.length, n2 = subStr.length) => {
+  //If the string is empty
+  //Or less than substring
+  
+  if(n1 === 0 || n1 < n2){
+    return 0;
+  }
+  
+  //Check if there is a subString in the original string
+  
+  if(str.substring(0, n2) === subStr){
+    //Remove the substring from the original string and call the function with increased count
+
+    return countSubString(str.substring(n2), subStr) + 1;
+  }
+  
+  //Call same function with one letter less than original string
+  return countSubString(str.substring(1), subStr);
+}
+
+console.log(countSubString('learea', 'ea'));
+console.log(count++);
+
+function checksub(str){
+var count = 0;
+for(let i =0 ;i<str.length;i++)
+{
+    if (str.substr(i,2) == 'st')
+	{
+	   count++
+	}
+
+}
+console.log(count)
+
+} 
+ 
+str = 'myststring' 
+check(str)
+
+
+
+</script>
+
+</html>

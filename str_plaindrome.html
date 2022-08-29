@@ -1,0 +1,50 @@
+
+<script>
+
+function plaindrome(x){
+  y = '';
+  alert(x.length)
+ for(i=x.length-1; i >= 0 ;i--)
+ {
+   y += x[i]
+ }
+  if(x == y)
+   return 'plaindrome'
+   else 
+   return 'not plaindrome'
+}
+
+console.log(plaindrome('E Y E'))
+
+
+
+function splitReturn(str){
+
+return str.split('').reverse().join('')
+
+
+}
+
+
+
+
+
+function recursiveReverse(str){
+  if(str === '')
+  {
+  return ""
+  }
+  else{
+    return (recursiveReverse(str.substr(1))+str.charAt(0))
+  
+  }
+
+}
+console.log(splitReturn("helo how ? ?"))
+
+
+
+
+
+
+</script>

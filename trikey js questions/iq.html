@@ -1,0 +1,67 @@
+
+<script>
+
+ console.log(undefined * 2)//NaN
+
+
+    z = 12;// error cant access z
+  let z;
+   console.log('second ',z);
+</script>
+
+<script>
+console.log('first ...',a); // error
+   a = 10;
+</script>
+<script>
+console.log('first ...',a); // undifined
+  var a = 10;
+</script>
+
+
+
+<script>
+function main(){
+      console.log(x) //undifined
+       var x =10; 
+
+   a = 10;
+  console.log('first ...',a);
+  var a;
+if(true){
+    a = 12;
+  let a;
+   console.log('second ',a);
+}
+console.log('final ',a);
+}
+main()
+
+
+
+function mul (x) {
+  return function(y) { // anonymous function
+    return function (z) { // anonymous function
+      return x*y*z;
+    };
+  };
+}
+
+console.log(mul(2)(3)(4));
+console.log(mul(4)(3)(4));
+
+//bind 
+
+const obj = {
+name: 'suresh',
+getName: function(){
+
+console.log(this.name);
+}
+
+}
+var name1 = obj.getName.bind(obj);
+name1();
+
+
+</script>

@@ -1,0 +1,122 @@
+<script>
+/*
+
+diference between array and generator :
+
+ array alread form elements but In generator generate value when next method is called
+
+1)done tells u ,false, iam not done with this array;
+done tells u ,true, iam done with this array;
+
+2)generator special function  with function followed * with function name;
+
+3)
+
+i)genrator doesnt produce all values like array when array has all the values.
+ but when i called next() method ,it generate a value using yield,
+ there is no limit for generator to call values
+ 
+ii)The generator functions return generator objects.
+ A generator object is an instance of the generator function, and it conforms to both the iterable and iterator interfaces.
+
+The generator objects can be used either by calling the next() method or by using the generator object within a loop.
+ The generator object is an iterator; that's why you can use it in for…of loops or in other functions accepting an iterable. 
+
+4) we can write multiple generator and also can one generator to another one
+   yield* anotherGenerator()
+5)  if u write 'return' keyword inside the generator function its the last one
+ can't iterate next yields
+
+
+**/
+
+// control iterable for denpendecies
+  function *infiniteGenrator(){
+    let i = 0;
+	while(true){
+	  yield i;
+	  i++
+	}
+  }
+   let iterator = infiniteGenrator();
+   
+      console.log(iterator.next());
+	   console.log(iterator.next());
+	    console.log(iterator.next());
+// multiple generator 
+console.log("multiple generator");
+ function *generator(){
+    yield 1;
+	yield* anotherGenerator();
+	yield 3;
+ 
+ };
+ 
+ function * anotherGenerator(){
+  yield 2;
+ }
+ let mulIter = generator();
+ 
+ console.log(mulIter.next());
+ console.log(mulIter.next());
+ console.log(mulIter.next());		
+		
+		
+		
+	
+// return stops the last value generator
+console.log("return stops the last value generator");
+ function * generator(){
+    yield 1;
+	return "hello"
+	yield 3;
+ 
+ };
+ 
+ function * anotherGenerator(){
+  yield 2;
+ }
+ let returnIter = generator();
+ 
+ console.log(returnIter.next());
+ console.log(returnIter.next());
+ console.log(returnIter.next());
+ /*
+  how to use genrator with promises
+  it cant move to the next line until resolve the first promise
+ 
+
+ beauty of generator is data from the first url needed to the 
+ second url ,its very much usefull;
+ 
+ it is called second url when first url get exec
+u dont execute second url until firs url extract all the data;
+
+**/
+console.log("promise with generator")
+
+ function request(url){
+ 
+  return new Promise(function(resolve,reject){
+    setTimeout(()=>{
+	 resolve(url)
+	},2000)
+  
+  })
+ }
+
+
+function *promiceGen(){
+  yield request('url1')
+ yield request('url2')
+}
+
+  let promiseIterator =  promiceGen();
+
+  console.log(promiseIterator.next())
+  console.log(promiseIterator.next())
+  console.log(promiseIterator.next())
+
+
+		
+</script>

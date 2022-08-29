@@ -1,0 +1,45 @@
+
+
+
+<script>
+function fun(a,sk)
+{
+
+low =0;
+high = a.length-1
+
+while( (low <= high)) 
+{
+    mid = Math.floor((low+high)/2)
+    if(sk === a[mid])
+    {
+	  return true
+	}
+	else if(sk > a[mid])
+	{
+	 low = mid+1;
+	}
+	else{
+	  high = mid-1;
+	}
+	
+}
+return false;
+}
+  a = [1,2,3,4,5] 
+  
+  console.log(fun(a,5))
+  
+
+
+
+
+
+
+
+
+
+</script>
+
+
+

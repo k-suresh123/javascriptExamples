@@ -1,0 +1,72 @@
+<html> <input type="file" onchange="onChange(event)">
+<script>
+function onChange(event) {
+  var file = event.target.files[0];
+  alert(file)
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    // The file's text will be printed here
+    alert(e.target.result)
+  };
+
+ reader.readAsText(file);
+}
+</script>
+
+
+
+<!-- second way of reading file -->
+
+<input type="file" id="myFile" >
+
+
+	<p>Then click Read button to read the file's content.</p>
+    <button onclick="loadFileAsText()">Read</button><br />
+	<h1>Content of loaded file</h1>
+	<textarea id="inputTextToSave"></textarea> <br />
+	<p>You can modify above text and save it using below button.</p>
+	<h1>Save the file</h1>
+	<button onclick="savefile()">Save</button>
+	<p id="dlink">Click save button to generate download link.</p>
+	<script>
+	function loadFileAsText(){
+	  var myFile = document.getElementById("myFile").files[0];
+
+	  var fileReader = new FileReader();
+	  fileReader.onload = function(fileLoaded){
+		  var textFromFileLoaded = fileLoaded.target.result;
+		  document.getElementById("inputTextToSave").value = textFromFileLoaded;
+	  };
+
+	  fileReader.readAsText(myFile, "UTF-8");
+	}
+	function savefile(){
+		var content = document.getElementById("inputTextToSave").value;
+		uriContent = "data:application/octet-stream," + encodeURIComponent(content);
+		alert(uriContent)
+		document.getElementById("dlink").innerHTML = "<a href=" + uriContent + " download=\"savedfile.txt\">Here is the download link</a>";
+	
+	
+	}
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

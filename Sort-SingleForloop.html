@@ -1,0 +1,27 @@
+
+
+<script>
+//step1: [5,4,3]
+//step2: [4,5,3]
+//step3: [4,3,5]
+//step4: [3,4,5]
+
+function sortSingleForLoop(a)
+{
+  
+  for(i=0;i<a.length-1;i++)
+  {
+    if(a[i] > a[i+1] )
+	{
+	   a[i] = a[i]+a[i+1]
+	    a[i+1] = a[i]-a[i+1]
+		 a[i] = a[i]-a[i+1]
+		 i = -1;
+	}
+  }
+  return a;
+}
+a =[5,4,3]
+console.log(sortSingleForLoop(a))
+
+</script>

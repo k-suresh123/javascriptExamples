@@ -1,0 +1,27 @@
+<script>
+let fun = new Promise(function(resolve, reject){
+  let res= false; 
+ if(res)
+  {
+  resolve("yes")
+  }
+  else{
+  reject("no")
+  
+
+})
+fun.then(function(y){
+console.log(""+y)
+}).catch(function(x){
+console.log(""+x)
+})
+
+</script>
+
+
+fun=promise((resolve,reject)=>{
+resolve("yyes")
+
+})
+
+fun.then(f(x){}).catch(f(e){})

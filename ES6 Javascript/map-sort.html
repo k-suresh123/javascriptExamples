@@ -1,0 +1,45 @@
+<script>
+var par  = [8,9,6,7,1]
+
+var result =par.map( (v,i,ar)=>{
+          pass =i;
+          for(var j=i; j < ar.length;j++)
+           {
+		          if( ar[j] < ar[pass])
+				  {
+				   pass =j
+				  }
+		   }
+         if(pass != i)
+          {
+		    [ar[i],ar[pass]] = [ar[pass],ar[i]]
+		  }		 
+           return ar
+		 })
+
+console.log(result[result.length-1])
+		
+		/*
+		par  = [3,2,6,1]
+var result =par.map( (v,i,ar)=>{
+    var res =  ar.reduce((t,v,j,k)=>{
+             if( t > v){
+               t = v;
+	           return t
+              }
+              return t
+             },Infinity)
+       index = ar.indexOf(res)
+       ar.splice(index,1)
+	   alert(ar)
+       return res;
+} )
+
+console.log(result)
+		
+		
+		**/
+
+
+
+</script>

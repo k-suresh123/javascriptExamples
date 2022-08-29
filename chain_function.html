@@ -1,0 +1,51 @@
+<script>
+var obj = function(){
+
+ this.i =0;
+	this.add = function(j){
+      this.i += j
+      return this
+	}
+	this.substract = function(k){
+      this.i -= k
+      return this
+   }
+   this.print = function(){
+    console.log(this.i)
+  }
+  
+}
+var x = new obj();
+x.add(3).substract(2).print()
+
+//type 2 function
+
+var obj1= function(){
+  var i =0;
+  
+  var add = function(j){
+    i += j;
+    return this;	
+  }
+  
+  var substract = function(j){
+    i -= j;
+	return this;	
+  }
+  
+  var print = function(){
+    console.log(i)
+  }
+  return {add:add, substract:substract, print:print};
+
+
+};
+var y =  obj1();
+y.add(5).substract(3).print();
+//console.log(y)
+
+
+
+
+
+</script>

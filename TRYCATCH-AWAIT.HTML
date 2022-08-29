@@ -1,0 +1,53 @@
+<script>
+
+console.log("person1:show ticket")
+console.log("person2:show ticket")
+
+const preMovie = async ()=>{
+
+	const getTicket = new Promise((resolve, reject)=>{
+					  setTimeout(()=> reject('ticket'),3000)
+					})
+
+		let ticket
+		try{
+			ticket= await getTicket;
+			}catch(e){
+				ticket = 'sad face'
+				}
+
+  return ticket
+}
+
+preMovie().then((m)=> console.log(m));
+
+console.log("person3:show ticket")
+console.log("person4:show ticket")
+
+
+//try catch best perpose of use example 
+
+const converToRs = (dollar)=>{
+  if(typeof dollar === number)
+  {
+    return dolar*64
+  }
+  else{
+    throw Error("amount need to be in number")
+  }
+
+}
+
+try{
+
+const myValue = converToRs('five')
+console.log(myValue)
+}catch (err){
+console.log(err.message)
+}
+
+console.log("iam not excute if program crash")
+
+
+
+</script>

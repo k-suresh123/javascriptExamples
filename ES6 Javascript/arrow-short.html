@@ -1,0 +1,34 @@
+<script>
+const dragonEvents = [
+ {type:'attack',value :12,target:'player-dorman'},
+ {type :'yawn',value:40},
+ {type :'eat',target:'horse'},
+ {type:'attack' ,value:23,target:'payer-fluffykins'},
+ {type:'attack', value:12,target:'player-dorman'}
+]
+
+/*
+const reduceTotal = (prev,x)=> (prev || 0)+x
+var result = dragonEvents.filter((e)=> e.type = 'attack')
+             .filter( (e)=> e.target == 'player-dorman')
+			 .map((e) => e.value)
+			 .reduce(reduceTotal)
+  console.log(result)
+**/
+var result = dragonEvents.filter(function(event){
+      return event.type == 'attack'
+   })
+   .filter(function(event){
+      return event.target == 'player-dorman' 
+   })
+   .map(function(event){
+      return event.value 
+   })
+   .reduce(function(prev,value){
+   return  prev+value
+   })
+
+console.log(result)
+
+
+</script>

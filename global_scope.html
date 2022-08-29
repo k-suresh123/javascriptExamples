@@ -1,0 +1,66 @@
+
+
+
+<script>
+var i = "global"	
+var gScope = function(){
+var i =3;
+var nest = function(){
+ console.log(this.i) 
+}
+nest();
+}
+gScope(); // global
+
+
+var m = "global"	
+var gScope1 = function(){
+var m =3;
+var nest1 = function(){
+ console.log(this.m)
+}
+nest1();
+}
+ref = new gScope1(); //global
+
+
+
+var n = "global"	
+var gScope2 = ()=>{
+var n =3;
+var nest2 = function(){
+ console.log(this.n)
+}
+nest2();
+}
+//ref = new gScope2(); //error gscrpt is not a constructor
+gScope2(); //global
+
+
+
+	
+
+
+var gScope3 = function(){
+var k =3;
+var nest3 = function(){
+ console.log(this.k)//undifined
+}
+nest3();
+}
+gScope3();
+
+
+// third check
+l = 8;	
+var gScope4 = function(){
+var l =3;
+var nest4 = function(){
+ console.log(this.l) 
+}
+nest4();
+}
+ ref = new gScope4();//8
+ 
+	
+</script>

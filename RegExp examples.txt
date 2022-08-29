@@ -1,0 +1,129 @@
+
+
+
+<input type="text" id="get">
+<br>
+<input type="button" onclick="check()" value ="check">
+
+
+<script>
+
+//regular expression treated as objects in javascript
+function check(){
+//pattern= /E00/
+//pattern= /E00/i
+//pattern = new RegExp("E00","i")
+//check this in entire string
+//var pattern = /[kbc]imple/
+// first letter a-z
+//var pattern = /[a-z]imple/
+//var pattern = /[a-zA-z0-9]imple/
+//var pattern = /[0-5]a[A-z]k[a-z]imple/
+
+/* exclude some thing
+var pattern = /[^1ab8]allow/
+
+**/
+
+
+/* mobile number
+
+\d - match any dight 0-9
+\w - match any word charcter (a-z,A-Z,0-9,& _)
+
+\s - match whitespace charecter (eg:spaces & tabs)
+
+\t - match a tab only
+^ is inside the squre brackets its not allow/
+^ out side is start point 
+$ denotes end of the string
+var pattern = /^[3-5]\d{3}$/;
+
+**/
+
+
+
+
+
+
+
+var pattern = /^([a-zA-Z0-9\+._]+)@([a-z]+).([a-z]+)$/;
+
+
+
+ 
+  val = document.getElementById("get").value
+  alert(pattern.test(val))
+
+
+
+}
+
+
+</script>
+
+
+
+
+reg expression img
+
+for "n"number of any charecter 
+
+^.{n}$
+
+date
+
+pattern="\d\d-\d\d-\d\d\d\d"
+
+
+^t.+h$
+
+.+ infinitry number of chareccter
+
+
+pattern ="0(12|21|33)"
+
+match either 012 or 021 or 033
+
+
+ragnge {min,max}
+
+[a-zA-B _>]{2,10}
+
+[allwoing mentioned charcter ]{minimum to  maximum}
+
+
++ for any number of letter
+
+[a-b]+
+
+
+email. validations
+
+([a-zA-Z\.+_]+)@([a-zA-Z0-9]+).([a-z]+)(.[a-z]+)?
+
+? for optional
+
+()@().()(optioinal)
+
+
+
+///////////////////////////////////////////////////
+
+
+<p>Calls a function once for each array element.</p>
+
+<p id="demo"></p>
+<input type="text" id="enter">
+<button onclick="fun()">submit</button>
+<script>
+function fun()
+{
+inp = document.getElementById("enter").value
+//alert(inp)
+  pattern= /^([a-zA-Z0-9\.+_]+)@([a-zA-Z0-9]+).([a-z]+)(.[a-z]+)?$/
+  
+  re= pattern.test(inp)
+ // alert(re)
+  document.getElementById("demo").innerHTML = re
+}

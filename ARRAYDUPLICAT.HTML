@@ -1,0 +1,63 @@
+<script>
+/*
+       let result = this.removeDuplicatesFromArray(this.parentProjectList,t => t.uuid) 
+ 
+  removeDuplicatesFromArray(data,key){
+    return [
+      ...new Map(
+        data.map( x => [key(x),x])
+      ).values()
+    ]
+  }
+**/
+
+
+
+
+ let a = [1,2,2,6,6,8]
+n =a.length;
+var b =[];
+
+for(let i = 0;i<n;i++)
+{
+ if(b.indexOf(a[i]) == -1){
+   b.push(a[i]);
+ }
+}
+console.log(b)   
+
+obj= {};
+
+for( let i of a)
+{
+obj[i] = true;
+}
+
+//converted obj to array
+console.log(Object.keys(obj))
+//converted array to object
+nary = Object.keys(obj)
+var arrobj = nary.map((key)=> {
+return {[key]:obj[key]};
+} )
+
+console.log(arrobj)
+
+
+
+let _temp
+b.length =0;
+for(let i = 0;i<n;i++)
+{
+ if(a[i] !== _temp){
+   b.push(a[i]);
+   _temp = a[i]
+ }
+}
+console.log(b)   
+
+
+
+ 
+ 
+</script>

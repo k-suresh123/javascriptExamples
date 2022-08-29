@@ -1,0 +1,116 @@
+<script>
+
+//inheritance without prototype 
+
+function parent(name,mobile){
+   this.name = name;
+   this.mobile = mobile;
+   this.detail =function(){
+	console.log(this.name+'-'+this.mobile)
+	}
+   }
+	function sub(name,mobile,city){
+		parent.call(this,name,mobile)
+		}	
+
+	ref = new sub('suresh',9865,'hyd')
+ ref.detail()
+
+
+
+//obj2.prototype = Object.create(obj.prototype)
+//the above statement should use when add prototype 
+// for normal inheritance object.create is not required
+
+
+function Book(title,author,year){
+this.title = title;
+this.author = author;
+this.year = year;
+}
+
+Book.prototype.getSummary = function(){
+
+return `${this.title} was written by ${this.author} in ${this.year}`;
+}
+
+
+function Magazine(title,author,year,month){
+   Book.call(this,title,author,year);
+   this.month = month;
+}
+//inheri Prototype
+
+ Magazine.prototype = Object.create(Book.prototype)
+ 
+ //instantiate Magazine object
+ 
+ const mag1 = new Magazine('Mag one','John Doe','2018','Jan ')
+ 
+ console.log(mag1)
+ 
+ //use Magazine CONSTRUCTOR
+ 
+ //Magazine.prototype.constructor = Magazine
+console.log(mag1)
+
+
+</script>
+
+<script>
+// object can create many ways 
+const bookProtos = {
+
+    getSummary :function(){
+     return `${this.title} was written by ${this.author} in ${this.year}`;
+     },
+
+     getAge : function(){
+      const years = new Date().getFullYear() - this.year;
+	  return`${this.title} is ${years} years old`
+	  }
+	}
+
+ // creat object
+ const book1 = Object.create(bookProtos);
+ 
+  book1.title = "Book one";
+  book1.author = 'John Doe';
+  book1.year = '2013'  
+   console.log(book1)
+   
+   
+   // orphans
+   
+   
+   <!-- const book1 = Object.create(bookProtos,{ -->
+     <!-- title :{value :'Book one'}, -->
+	 <!-- author :{ value:' john Doe'}, -->
+	 <!-- year :{ value :'2013'} -->
+   
+   <!-- }); -->
+   
+    <!-- console.log(book1) -->
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+</script>
+
+
