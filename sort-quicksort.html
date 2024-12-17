@@ -1,4 +1,23 @@
-
+<script>
+function qsort(ary){
+    if(ary.length <= 1)
+    return ary
+    else{
+        let left = [];
+        let right = [];
+        let nary = [];
+        let pivot = ary.pop();
+        for(let i=0;i<ary.length;i++){
+              if(ary[i] <= pivot)
+                left.push(ary[i]);
+               else
+                right.push(ary[i]);
+        }
+        return [...qsort(left), pivot, ...qsort(right)];
+    }
+}
+console.log(qsort([3,1,5]))
+</script>
 <script>
 function quick_Sort(origArray) {
 	if (origArray.length <= 1) { 
