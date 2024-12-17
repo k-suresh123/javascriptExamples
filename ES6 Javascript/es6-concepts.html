@@ -107,6 +107,14 @@ console.log(`Object destructuring and Assigning new variable names`)
  console.log(y)
  odNewvalues()
 
+    //spread operator 
+
+    let arr = [1, 2, 3, -1];
+
+console.log(Math.min(arr));      // NaN (array treated as a single argument)
+      //Math.min([1,2,3,-1])
+console.log(Math.min(...arr));   // -1 (spread operator expands the array)
+      //Math.min(1,2,3,-1)
 
 
 </script>
