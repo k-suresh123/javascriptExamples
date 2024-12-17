@@ -44,6 +44,12 @@ setTimeout(()=>{ console.log("setTimeout 2")},0)
 
 Promise.resolve().then( r => console.log('promise1')).then(r => console.log('promise1'))
 
-console.log("end")
+console.log("end");
+
+  This code demonstrates the execution flow in Node.js when dealing with the event loop, especially focusing on:
+
+Synchronous tasks
+Microtasks (process.nextTick and Promises)
+Macrotasks (setImmediate)
 
 </script>
