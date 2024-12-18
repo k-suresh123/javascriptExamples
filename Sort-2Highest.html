@@ -22,29 +22,32 @@ var secondLowest = var secondLowest = function (a) {
     : `Second lowest: ${second}`;
 };
 
-var secondHighest =function(b)
-{
-  first = b[0]
-  second = '';
-  for(i=1;i<b.length;i++)
-  {
-     if(first < b[i])
-     {
-	  second = first;
-	  first = b[i]
-	 }	
-     else if(second < b[i] && first != b[i])
-	 {
-	   second = b[i]
-	 }	 
+var secondHighest = function (a) {
+  if (a.length < 2) {
+    return "Array must contain at least two unique numbers";
   }
-return `second Highest:${second}`;
-} 
-a = [20,10,5,15,23,6]
 
-console.log(secondLowest(a))
-console.log(secondHighest(a))
+  let highest = -Infinity;
+  let secondHighest = -Infinity;
 
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > highest) {
+      secondHighest = highest; // The previous highest becomes the second highest
+      highest = a[i]; // Update the highest value
+    } else if (a[i] > secondHighest && a[i] !== highest) {
+      secondHighest = a[i]; // Update second highest
+    }
+  }
+
+  return secondHighest === -Infinity
+    ? "No second highest value found (array has duplicate values or insufficient unique numbers)"
+    : `Second highest: ${secondHighest}`;
+};
+
+// Example usage
+console.log(secondHighest([3, 1, 4, 1, 5, 9])); // Second highest: 5
+console.log(secondHighest([1, 1, 1])); // No second highest value found
+console.log(secondHighest([2])); // Array must contain at least two unique numbers
 
 </script>
 </html>
