@@ -1,23 +1,27 @@
 <html>
 <script>
-var secondLowest = function (a)
-{
-	first =a[0];
-	second = '';
-	for(i=1;i<a.length;i++)
-	{
-		if(first > a[i])
-		{
-		second = first
-		first = a[i]
-		}
-		else if( second > a[i] && first != a[i])
-		{
-		second  = a[i]
-		}
-	}
-	return `second lowest:${second}`
-}
+var secondLowest = var secondLowest = function (a) {
+  if (a.length < 2) {
+    return "Array must contain at least two unique numbers";
+  }
+
+  let first = Infinity; // Use Infinity to handle edge cases
+  let second = Infinity;
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] < first) {
+      second = first;
+      first = a[i];
+    } else if (a[i] < second && a[i] !== first) {
+      second = a[i];
+    }
+  }
+
+  return second === Infinity
+    ? "No second lowest value found (array has duplicate values or insufficient unique numbers)"
+    : `Second lowest: ${second}`;
+};
+
 var secondHighest =function(b)
 {
   first = b[0]
